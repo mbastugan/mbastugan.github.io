@@ -365,5 +365,74 @@
             }
         }
     </script>
+
+    <!-- EmailJS Visitor Notification -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            const EMAILJS_PUBLIC_KEY = "Zo-RmxtqoKeiPCLTf";
+            const EMAILJS_SERVICE_ID = "service_car3u0u";
+            const EMAILJS_TEMPLATE_ID = "template_uwudpmI";
+
+            function shouldSendVisitNotification() {
+                const today = new Date().toISOString().slice(0, 10);
+                const storageKey = "mbastugan_visit_notification_sent_" + today;
+
+                if (localStorage.getItem(storageKey)) {
+                    return false;
+                }
+
+                localStorage.setItem(storageKey, "true");
+                return true;
+            }
+
+            function getIstanbulTime() {
+                return new Date().toLocaleString("tr-TR", {
+                    timeZone: "Europe/Istanbul",
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit"
+                });
+            }
+
+            async function sendVisitNotification() {
+                if (!window.emailjs) {
+                    console.warn("EmailJS library was not loaded.");
+                    return;
+                }
+
+                if (!shouldSendVisitNotification()) {
+                    return;
+                }
+
+                try {
+                    emailjs.init({
+                        publicKey: EMAILJS_PUBLIC_KEY
+                    });
+
+                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                        visit_time: getIstanbulTime(),
+                        page_url: window.location.href,
+                        referrer: document.referrer || "Direct / Unknown",
+                        user_agent: navigator.userAgent
+                    });
+
+                    console.log("Visit notification sent.");
+                } catch (error) {
+                    console.warn("Visit notification failed:", error);
+                }
+            }
+
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", sendVisitNotification);
+            } else {
+                sendVisitNotification();
+            }
+        })();
+    </script>
+
 </body>
 </html>
