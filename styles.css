@@ -116,6 +116,36 @@ body::before {
   gap: 18px;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(31, 28, 25, 0.08);
+}
+
+.lang-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.lang-pill.is-active {
+  background: var(--text);
+  color: #f9f4ec;
+}
+
 .linkedin-badge {
   display: inline-flex;
   align-items: center;
@@ -922,6 +952,10 @@ body::before {
 
   .topbar-actions {
     justify-content: flex-start;
+  }
+
+  .lang-switch {
+    margin-top: 2px;
   }
 
   .hero {
