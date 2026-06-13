@@ -333,6 +333,7 @@
             <input type="hidden" name="page_url" id="page-url">
             <input type="hidden" name="referrer" id="referrer">
             <input type="hidden" name="user_agent" id="user-agent">
+            <input type="hidden" name="email" id="email-hidden">
             <label>
               <span>Name</span>
               <input type="text" name="name" placeholder="Your name">
@@ -372,6 +373,8 @@
     const pageUrlField = document.getElementById("page-url");
     const referrerField = document.getElementById("referrer");
     const userAgentField = document.getElementById("user-agent");
+    const emailHiddenField = document.getElementById("email-hidden");
+    const contactDetailField = messageForm ? messageForm.querySelector('input[name="contact_detail"]') : null;
 
     if (window.emailjs) {
       window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
@@ -389,6 +392,10 @@
       if (pageUrlField) pageUrlField.value = window.location.href;
       if (referrerField) referrerField.value = document.referrer || "Direct";
       if (userAgentField) userAgentField.value = navigator.userAgent;
+      if (emailHiddenField && contactDetailField) {
+        const contactValue = contactDetailField.value.trim();
+        emailHiddenField.value = contactValue.includes("@") ? contactValue : "";
+      }
     }
 
     populateTrackingFields();
