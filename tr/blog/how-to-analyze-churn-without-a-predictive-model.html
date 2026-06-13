@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictive Model Olmadan Churn Nasıl Analiz Edilir? | Murat Bastugan</title>
+  <meta name="description" content="Predictive modellemeden önce net tanımlar, lifecycle aşamaları, inaktivite mantığı ve değer bazlı önceliklendirme kullanarak churn analizine pratik bir rehber.">
+  <meta name="keywords" content="churn analizi, retention analytics, predictive model olmadan churn, CRM analytics, inaktivite bantları, retention reporting">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Murat Bastugan">
+  <link rel="canonical" href="https://mbastugan.github.io/tr/blog/how-to-analyze-churn-without-a-predictive-model.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html" aria-label="Murat Bastugan ana sayfa">
+        <span class="brand-mark">MB</span>
+        <span class="brand-copy">
+          <strong>Murat Bastugan</strong>
+          <span>CRM Analytics / Retention / Growth</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <nav class="nav">
+          <a href="../index.html#work">Çalışmalar</a>
+          <a href="../index.html#experience">Deneyim</a>
+          <a href="../index.html#projects">Projeler</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../index.html#contact">İletişim</a>
+        </nav>
+      </div>
+    </header>
+    <main class="article-shell">
+      <article class="article-layout">
+        <p class="eyebrow">Churn Analizi</p>
+        <h1>Predictive Model Olmadan Churn Nasıl Analiz Edilir?</h1>
+        <p class="article-deck">Predictive modeller değerli olabilir; ancak birçok CRM ve growth ekibinin önce daha temel bir disipline ihtiyacı vardır: ortak bir churn tanımı, kullanılabilir bir inaktivite görünümü ve aksiyonu destekleyen bir raporlama yapısı.</p>
+        <div class="article-meta">
+          <span>Ana anahtar kelime: churn analizi</span>
+          <span>Okuma süresi: 6 dk</span>
+        </div>
+        <div class="article-body">
+          <h2>Modelleme Hedefinden Değil, İş Tanımından Başlayın</h2>
+          <p>Ekipler çoğu zaman churn modeli istediklerini söyler; oysa gerçekten ihtiyaç duydukları şey müşteri kopuşunu daha temiz anlamaktır. Abonelik ürünlerinde churn iptal olabilir. Sigortada lapse veya yenilememe olabilir. Ödeme sistemlerinde ise tanımlı bir inaktivite penceresi olabilir. Tanım, ürünün doğal kullanım ritmiyle uyumlu değilse analiz gürültülü hale gelir ve aksiyon kalitesi düşer.</p>
+          <p>Pratik bir churn görünümü, üzerinde uzlaşılmış tek bir iş kuralıyla başlar: aktif, zayıflayan, inaktif ve kaybedilmiş müşteri tam olarak ne demektir? Bu yapı stabil hale geldiğinde raporlamaya güvenmek kolaylaşır ve müdahale mantığını otomatikleştirmek daha mümkün olur.</p>
+          <h2>Hareket Analizini Destekleyen Bir Müşteri Tabanı Kurun</h2>
+          <p>Herhangi bir tahminden önce temel tablo basit sorulara yanıt vermelidir. Müşteri ilk ne zaman aktif oldu? Son anlamlı aktivite ne zamandı? Ne sıklıkla işlem yapıyor? Ne kadar değer üretiyor? Hangi ürün veya kanalı kullanıyor? Hangi CRM journey’leriyle temas etti?</p>
+          <p>Bu yapı ekiplerin tek bir genel churn oranının ötesine geçmesini sağlar. Yalnızca churn olduğunu görmek yerine müşterilerin nerede uzaklaştığını, hangi aşamaların aksadığını ve problemin yeni kullanıcılarda mı, tekrar kullananlarda mı yoksa yüksek değerli müşterilerde mi yoğunlaştığını görebilirler.</p>
+          <h2>Olasılık Skorlarından Önce İnaktivite Bantlarını Kullanın</h2>
+          <p>En basit ve en kullanışlı tekniklerden biri inaktivite bantlamasıdır. 8 gündür inaktif olan bir müşteri, 90 gündür inaktif olan bir müşteriyle aynı şekilde ele alınmamalıdır. 0-7, 8-30, 31-60, 61-90 ve 90+ gün gibi bantlar çoğu zaman tek bir churn flag’inden daha iyi operasyonel görünürlük sağlar.</p>
+          <p>Bu yaklaşım CRM ekiplerinin hatırlatma, bilgilendirme akışları, win-back journey’leri veya teşvik kararlarının ne zaman devreye girmesi gerektiğini tanımlamasına yardımcı olur. Ayrıca growth ekiplerine müşteri enerjisinin tamamen kopuş yaşanmadan önce nerede zayıfladığını daha iyi gösterir.</p>
+          <h2>Churn’ü Lifecycle ve Değere Göre Segmentleyin</h2>
+          <p>Her churn aynı derecede önemli değildir. Hiç aktive olmamış yeni kayıtlı bir kullanıcı ile işlem frekansı çökmüş sadık bir müşteri farklı problemlerdir. Churn analizi, lifecycle aşaması ve ticari değere göre ayrıldığında çok daha kullanışlı hale gelir.</p>
+          <p>Pratikte bu genellikle churn durumunu müşteri yaşı, güncel değer, frekans ve ürün derinliğiyle birleştirmek anlamına gelir. Bu, problemin edinim kalitesi mi, aktivasyon başarısızlığı mı, düşen etkileşim mi yoksa değerli müşterilerde zayıf retention mı olduğunu ortaya çıkarır. Bu katman olmadan ekipler churn’e genellikle genel bir şekilde tepki verir ve iş gerekçesinin zayıf olduğu yerlere bütçe harcar.</p>
+          <h2>Churn Raporlamasını Sadece Dashboard’a Değil, Kararlara Bağlayın</h2>
+          <p>İyi bir churn analizi operasyonel kararlarla bitmelidir. Hangi müşterilerin korunmaya ihtiyacı var? Hangilerinin bilgilendirilmeye ihtiyacı var? Hangi segmentler pahalı tekliflerden hariç tutulmalı? Hangi inaktivite eşiği bir CRM akışını tetiklemeli? Hangi kanallar erken etkileşimden sonra zayıf performans gösteriyor?</p>
+          <p>Churn analizinin raporlama egzersizinin ötesine geçtiği yer burasıdır. Dashboard bir sonraki hamleyi destekleyemiyorsa raporlama mantığı muhtemelen fazla soyuttur. Ekiplerin churn raporlamasına yalnızca geçmişe dönük farkındalık için değil, aksiyon öncelikleri oluşturmak için ihtiyacı vardır.</p>
+        </div>
+        <aside class="article-sidebox">
+          <h2>İlgili Yazılar</h2>
+          <ul>
+            <li><a href="retention-dashboards-which-kpis-actually-matter.html">Retention Dashboard’ları: Hangi KPI’lar Gerçekten Önemli?</a></li>
+            <li><a href="sql-approaches-for-churn-and-retention-analysis.html">Churn ve Retention Analizi İçin SQL Yaklaşımları</a></li>
+            <li><a href="customer-segmentation-for-crm-teams-a-practical-framework.html">CRM Ekipleri İçin Müşteri Segmentasyonu: Pratik Bir Çerçeve</a></li>
+          </ul>
+        </aside>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
