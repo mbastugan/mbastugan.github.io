@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Analyze Churn Without a Predictive Model | Murat Bastugan</title>
+  <meta name="description" content="A practical guide to churn analysis using clear definitions, lifecycle stages, inactivity logic, and value-based prioritization before predictive modeling.">
+  <meta name="keywords" content="churn analysis, retention analytics, churn without predictive model, CRM analytics, inactivity bands, retention reporting">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Murat Bastugan">
+  <link rel="canonical" href="https://mbastugan.github.io/blog/how-to-analyze-churn-without-a-predictive-model.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html" aria-label="Murat Bastugan home">
+        <span class="brand-mark">MB</span>
+        <span class="brand-copy">
+          <strong>Murat Bastugan</strong>
+          <span>CRM Analytics / Retention / Growth</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <nav class="nav">
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main class="article-shell">
+      <article class="article-layout">
+        <p class="eyebrow">Churn Analysis</p>
+        <h1>How to Analyze Churn Without a Predictive Model</h1>
+        <p class="article-deck">Predictive models can be valuable, but many CRM and growth teams need a more basic discipline first: a shared churn definition, a usable inactivity view, and a reporting structure that supports action.</p>
+        <div class="article-meta">
+          <span>Primary keyword: churn analysis</span>
+          <span>Reading time: 6 min</span>
+        </div>
+        <div class="article-body">
+          <h2>Start with a business definition, not a modeling ambition</h2>
+          <p>Teams often say they want a churn model when what they really need is a cleaner understanding of customer drop-off. In subscription products, churn may be cancellation. In insurance, it may be lapse or non-renewal. In payments, it may be a defined inactivity window. If the definition does not match the natural usage rhythm of the product, the analysis becomes noisy and action quality declines.</p>
+          <p>A practical churn view begins with one agreed business rule: what exactly counts as active, weakening, inactive, and lost. Once that is stable, reporting becomes easier to trust and intervention logic becomes easier to automate.</p>
+          <h2>Build a customer base that supports movement analysis</h2>
+          <p>Before any prediction, the base table should answer simple questions. When did the customer first become active? When was the last meaningful activity? How often do they transact? How much value do they generate? Which product or channel do they use? Which CRM journeys have touched them?</p>
+          <p>That structure lets teams move beyond one overall churn rate. Instead of only seeing that churn exists, they can see where customers are drifting, which stages are failing, and whether the problem is concentrated in new users, repeat users, or high-value customers.</p>
+          <h2>Use inactivity bands before trying probability scores</h2>
+          <p>One of the simplest and most useful techniques is inactivity banding. A customer who has been inactive for 8 days should not be treated the same as a customer inactive for 90 days. Bands such as 0 to 7, 8 to 30, 31 to 60, 61 to 90, and 90 plus days often create better operational visibility than a single churn flag.</p>
+          <p>This approach helps CRM teams define when reminders, education flows, win-back journeys, or incentive decisions should happen. It also gives growth teams a better view of where customer energy is weakening before a full drop-off occurs.</p>
+          <h2>Segment churn by lifecycle and value</h2>
+          <p>Not all churn is equally important. A newly registered user who never activated is a different problem from a loyal customer whose transaction frequency has collapsed. Churn analysis becomes much more useful when it is split by lifecycle stage and by commercial value.</p>
+          <p>In practice, this usually means combining churn status with customer age, recent value, frequency, and product depth. That reveals whether the issue is acquisition quality, activation failure, declining engagement, or weak retention among valuable customers. Without that layer, teams often react to churn in a generic way and spend money where the business case is weak.</p>
+          <h2>Connect churn reporting to decisions, not just dashboards</h2>
+          <p>A good churn analysis should end with operational decisions. Which customers need protection? Which ones need education? Which segments should be excluded from expensive offers? Which inactivity threshold should trigger a CRM flow? Which channels are underperforming after early engagement?</p>
+          <p>That is where churn analysis becomes more than a reporting exercise. If the dashboard cannot support the next move, then the reporting logic is probably too abstract. Teams need churn reporting to create action priorities, not just retrospective awareness.</p>
+        </div>
+        <aside class="article-sidebox">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="retention-dashboards-which-kpis-actually-matter.html">Retention Dashboards: Which KPIs Actually Matter</a></li>
+            <li><a href="sql-approaches-for-churn-and-retention-analysis.html">SQL Approaches for Churn and Retention Analysis</a></li>
+            <li><a href="customer-segmentation-for-crm-teams-a-practical-framework.html">Customer Segmentation for CRM Teams: A Practical Framework</a></li>
+          </ul>
+        </aside>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

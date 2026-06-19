@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Churn ve Retention Analizi İçin SQL Yaklaşımları | Murat Bastugan</title>
+  <meta name="description" content="İnaktivite bantları, cohort kurgusu, reaktivasyon flag’leri ve yaşam döngüsü raporlaması dahil churn ve retention analizi için kullanışlı SQL yapıları.">
+  <meta name="keywords" content="SQL churn analizi, SQL retention analizi, cohort SQL, yaşam döngüsü raporlaması SQL, CRM analitiği SQL">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Murat Bastugan">
+  <link rel="canonical" href="https://mbastugan.github.io/tr/blog/sql-approaches-for-churn-and-retention-analysis.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html" aria-label="Murat Bastugan ana sayfa">
+        <span class="brand-mark">MB</span>
+        <span class="brand-copy">
+          <strong>Murat Bastugan</strong>
+          <span>CRM Analytics / Retention / Growth</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <nav class="nav">
+          <a href="../index.html#work">Çalışmalar</a>
+          <a href="../index.html#experience">Deneyim</a>
+          <a href="../index.html#projects">Projeler</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../index.html#contact">İletişim</a>
+        </nav>
+      </div>
+    </header>
+    <main class="article-shell">
+      <article class="article-layout">
+        <p class="eyebrow">SQL</p>
+        <h1>Churn ve Retention Analizi İçin SQL Yaklaşımları</h1>
+        <p class="article-deck">SQL’in faydalı olması için gösterişli olması gerekmez. Churn ve retention çalışmalarında en güçlü SQL çoğu zaman müşteri hareketini, inaktiviteyi ve reaktivasyonu raporlama katmanları boyunca güvenilir hale getiren mantıktır.</p>
+        <div class="article-meta">
+          <span>Ana anahtar kelime: SQL churn analizi</span>
+          <span>Okuma süresi: 6 dk</span>
+        </div>
+        <div class="article-body">
+          <h2>Yeniden Kullanılabilir Müşteri Seviyesinden Başlayın</h2>
+          <p>En iyi retention SQL’i genellikle doğrudan dashboard sorgusuna atlamak yerine müşteri seviyesinde bir temel tabloyla başlar. Bu temel yapı; ilk aktivite tarihi, en güncel aktivite tarihi, aktivite adedi, mevcut değer, ürün göstergeleri ve önemli kampanya temas flag’lerini taşımalıdır.</p>
+          <p>Bu müşteri seviyesi yapı stabil hale geldiğinde, birden fazla raporlama görünümünü yönetmek daha kolay olur. BI araçları churn, lifecycle, segment ve retention raporlaması için aynı mantığı kullanabilir; böylece her dashboard’un tanımları yeniden oluşturması gerekmez.</p>
+          <h2>İnaktivite Bantları En Pratik Kalıplardan Biridir</h2>
+          <p>Çok kullanışlı bir SQL kalıbı inaktivite bantlamasıdır. Güncel tarih ile son anlamlı aktivite arasındaki datediff veya benzeri bir hesaplama ile müşteriler 0-7, 8-30, 31-60, 61-90 ve 90+ gün gibi operasyonel gruplara ayrılabilir.</p>
+          <p>Bu yaklaşım hemen daha iyi bir CRM aksiyon zemini oluşturur. Ekipler yeni başlayan inaktiviteyi uzun süreli dormancy’den ayırabilir ve bu durumları hatırlatma, bilgilendirme akışları veya win-back aksiyonlarıyla ilişkilendirebilir. Pratikte bu tip SQL, fazla soyut skor üretiminden çoğu zaman daha değerlidir.</p>
+          <h2>Cohort Mantığı Açık ve Tekrarlanabilir Olmalı</h2>
+          <p>Cohort mantığı temiz olduğunda retention analizi çok daha güvenilir hale gelir. SQL, cohort tarihini net tanımlamalıdır; bu genellikle ilk işlem, ilk aktivasyon, ilk poliçe veya ilk başarılı kullanımdır. Böylece raporlama katmanı, edinim dönemlerini birbirine karıştırmadan müşteri devamlılığını veya tekrar aktiviteyi zaman içinde karşılaştırabilir.</p>
+          <p>İyi bir cohort SQL’i yalnızca retention yüzdelerini hesaplamaz. Aynı zamanda müşteri adetlerini de görünür tutar; böylece iş birimleri ölçeği doğru yorumlayabilir. Bu önemlidir çünkü çok küçük bir bazdaki sağlıklı görünen bir yüzde, ticari açıdan hâlâ zayıf bir tablo olabilir.</p>
+          <h2>Reaktivasyon Kendi Mantığını Hak Eder</h2>
+          <p>Birçok ekip churn ve aktif müşterileri takip eder ancak reaktivasyonu gözden kaçırır. SQL, belirli bir süre inaktif kalan ve ardından nitelikli aktiviteyle geri dönen müşterileri flag’leyerek bunu temiz şekilde ele alabilir. Bu da win-back performansı ve geri dönüş sonrası davranış için ayrı bir görünüm oluşturur.</p>
+          <p>Bu, kampanyaların uyuyan müşterileri yeniden canlandırmayı hedeflediği CRM ortamlarında özellikle faydalıdır. Ayrı bir reaktivasyon tanımı olmadan ekipler, aslında tek seferlik geri dönüş sıçramaları olan hareketleri retention iyileşmesi gibi fazla güçlü yorumlayabilir.</p>
+          <h2>Kullanışlı SQL Bir Karar Altyapısıdır</h2>
+          <p>Churn ve retention analizinde SQL’in değeri yalnızca teknik şıklıktan gelmez. Asıl değer, CRM, growth ve yönetim raporlaması için stabil bir karar zemini oluşturabilmesidir. Cohort, inaktivite, değer ve reaktivasyon etrafındaki temiz mantık, ham müşteri olaylarını iş birimlerinin gerçekten kullanabileceği bir dile dönüştürür.</p>
+        </div>
+        <aside class="article-sidebox">
+          <h2>İlgili Yazılar</h2>
+          <ul>
+            <li><a href="how-to-analyze-churn-without-a-predictive-model.html">Predictive Model Olmadan Churn Nasıl Analiz Edilir?</a></li>
+            <li><a href="retention-dashboards-which-kpis-actually-matter.html">Retention Dashboard’ları: Hangi KPI’lar Gerçekten Önemli?</a></li>
+            <li><a href="customer-analytics-use-cases-in-payments-and-e-money-services.html">Ödeme ve E-Para Hizmetlerinde Müşteri Analitiği Kullanım Alanları</a></li>
+          </ul>
+        </aside>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

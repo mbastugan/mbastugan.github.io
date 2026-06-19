@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Approaches for Churn and Retention Analysis | Murat Bastugan</title>
+  <meta name="description" content="Useful SQL structures for churn and retention analysis, including inactivity bands, cohort logic, reactivation flags, and lifecycle reporting.">
+  <meta name="keywords" content="SQL churn analysis, SQL retention analysis, cohort SQL, lifecycle reporting SQL, CRM analytics SQL">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Murat Bastugan">
+  <link rel="canonical" href="https://mbastugan.github.io/blog/sql-approaches-for-churn-and-retention-analysis.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html" aria-label="Murat Bastugan home">
+        <span class="brand-mark">MB</span>
+        <span class="brand-copy">
+          <strong>Murat Bastugan</strong>
+          <span>CRM Analytics / Retention / Growth</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <nav class="nav">
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main class="article-shell">
+      <article class="article-layout">
+        <p class="eyebrow">SQL</p>
+        <h1>SQL Approaches for Churn and Retention Analysis</h1>
+        <p class="article-deck">SQL does not need to be flashy to be useful. In churn and retention work, the strongest SQL is often the logic that makes customer movement, inactivity, and reactivation easy to trust across reporting layers.</p>
+        <div class="article-meta">
+          <span>Primary keyword: SQL churn analysis</span>
+          <span>Reading time: 6 min</span>
+        </div>
+        <div class="article-body">
+          <h2>Start from a reusable customer grain</h2>
+          <p>The best retention SQL usually begins with a customer-level base table rather than jumping straight into a dashboard query. That base should carry the first activity date, most recent activity date, activity count, current value, product indicators, and any major campaign exposure flags.</p>
+          <p>Once that customer grain is stable, multiple reporting views become easier to maintain. BI tools can consume the same logic for churn, lifecycle, segment, and retention reporting without forcing each dashboard to recreate the definitions.</p>
+          <h2>Inactivity banding is one of the most practical patterns</h2>
+          <p>A highly useful SQL pattern is inactivity banding. With a datediff or equivalent calculation between current date and last meaningful activity, customers can be grouped into operational buckets such as 0 to 7, 8 to 30, 31 to 60, 61 to 90, and 90 plus days.</p>
+          <p>This immediately creates a better CRM surface. Teams can distinguish fresh inactivity from long dormancy and connect those states to reminders, education flows, or win-back actions. In practice, this type of SQL is often more valuable than overly abstract score generation.</p>
+          <h2>Cohort logic should be explicit and repeatable</h2>
+          <p>Retention analysis becomes much more credible when cohort logic is clean. SQL should define the cohort date clearly, usually first transaction, first activation, first policy, or first successful use. Then the reporting layer can compare customer survival or repeat activity over time without mixing acquisition periods together.</p>
+          <p>Good cohort SQL does not only calculate retention percentages. It also keeps customer counts visible so the business can interpret scale correctly. This matters because a healthy percentage on a very small base can still be a weak commercial story.</p>
+          <h2>Reactivation deserves its own logic</h2>
+          <p>Many teams track churn and active customers but overlook reactivation. SQL can handle this cleanly by flagging customers who were inactive for a defined period and then returned with qualifying activity. That creates a separate view for win-back performance and post-return behavior.</p>
+          <p>This is particularly useful in CRM environments where campaigns aim to revive sleeping customers. Without a dedicated reactivation definition, teams may overstate retention improvements that are actually one-off return spikes.</p>
+          <h2>Useful SQL is decision infrastructure</h2>
+          <p>The value of SQL in churn and retention analysis is not technical elegance alone. It is the ability to create a stable decision surface for CRM, growth, and management reporting. Clean logic around cohorts, inactivity, value, and reactivation turns raw customer events into a language the business can actually use.</p>
+        </div>
+        <aside class="article-sidebox">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="how-to-analyze-churn-without-a-predictive-model.html">How to Analyze Churn Without a Predictive Model</a></li>
+            <li><a href="retention-dashboards-which-kpis-actually-matter.html">Retention Dashboards: Which KPIs Actually Matter</a></li>
+            <li><a href="customer-analytics-use-cases-in-payments-and-e-money-services.html">Customer Analytics Use Cases in Payments and E-Money Services</a></li>
+          </ul>
+        </aside>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
